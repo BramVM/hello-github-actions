@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
-        env: # Set the repo secret as an input
-          MY_NAME: ${{ secrets.TEST }}
-        # with: # Set the repo secret as an input
-        #   MY_NAME: ${{ secrets.TEST }}
+        # env: # Set the repo secret as an input
+        #   MY_NAME: ${{ env.TEST }}
+        with: # Set the repo secret as an input
+          MY_NAME: ${{ env.TEST }}
         # with:
         #   MY_NAME: "Bram"
