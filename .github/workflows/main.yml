@@ -5,12 +5,14 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest
     environment: test
+    env:
+      MY_NAME: ${{ env.TEST }}
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
-        # env: # Set the repo secret as an input
-        #   MY_NAME: ${{ env.TEST }}
-        with: # Set the repo secret as an input
-          MY_NAME: ${{ env.TEST }}
         # with:
         #   MY_NAME: "Bram"
+        # with: # Set the repo secret as an input
+        #   MY_NAME: ${{ secrets.TEST }}
+        with: # Set the repo secret as an input
+          MY_NAME: ${{ env.MY_NAME }}
