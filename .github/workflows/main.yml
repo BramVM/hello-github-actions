@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     env:
-      MY_NAME: ${{ env.TEST }}
+      MY_NAME: ${{ test.TEST }}
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
