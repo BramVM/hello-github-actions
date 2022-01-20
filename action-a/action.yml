@@ -1,14 +1,12 @@
 name: "Hello Actions"
 description: "Greet someone"
 author: "octocat@github.com"
-with: # Set the secret as an input
-  MY_NAME: ${{ secrets.test }}
 
-# inputs:
-#   MY_NAME:
-#     description: "Who to greet"
-#     required: true
-#     default: "World"
+inputs:
+  MY_NAME:
+    description: "Who to greet"
+    required: true
+    default: "World"
 
 runs:
   using: "docker"

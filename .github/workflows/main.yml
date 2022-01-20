@@ -7,5 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
-        with:
-          MY_NAME: "Bram"
+        with: # Set the secret as an input
+          MY_NAME: ${{ secrets.test }}
+        # with:
+        #   MY_NAME: "Bram"
